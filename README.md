@@ -22,4 +22,7 @@ Maintained Idempotency of Automation
 - We can deploy as many replicas of AlphaServer as we need inside Kubernetes cluster. AlphaClient can be deployed to as many VMs as we want using tools such as Ansible,Terraform,Chef.
 - I covered the most basic scenario of getting login attempts inside our own system
 - We can also get attempts on particular date after changing Date inside AlphaClient code
+- We can also get failed login count for any date
+  - Executing ==> grep "Mar 12.*Failed password" /var/log/auth.log | wc -l
+  - Client prints log msg <exit status 1> when there are no failed logins
 - Client actively check for login attempts & keeps on sending them to AlphaServer
