@@ -10,7 +10,6 @@ Maintained Idempotency of Automation
   - docker run -it -p 9001:9001 server:v1
 - Now that our AlphaServer is running, We will run AlphaClient in a VM . VM can be provisioned locally using Vagrant or in cloud such as AWS EC2 instance.
 - We just need to change server address in AlphaClient code or we can get it through ENV variable
-  - We can also get attempts on particular date after changing Date inside AlphaClient code
 - We can also directly run on our own host to get all login attempts.
 - Simply , Run
   - cd AlphaClient/
@@ -22,3 +21,5 @@ Maintained Idempotency of Automation
 
 - We can deploy as many replicas of AlphaServer as we need inside Kubernetes cluster. AlphaClient can be deployed to as many VMs as we want using tools such as Ansible,Terraform,Chef.
 - I covered the most basic scenario of getting login attempts inside our own system
+- We can also get attempts on particular date after changing Date inside AlphaClient code
+- Client actively check for login attempts & keeps on sending them to AlphaServer
